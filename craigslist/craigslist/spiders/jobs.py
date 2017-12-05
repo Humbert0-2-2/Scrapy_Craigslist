@@ -8,4 +8,5 @@ class JobsSpider(scrapy.Spider):
     start_urls = ['http://https://newyork.craigslist.org/search/egr/']
 
     def parse(self, response):
-        pass
+        titles = response.xpath('//a[@class="result-title hdrlnk"]/text()').extract()
+
